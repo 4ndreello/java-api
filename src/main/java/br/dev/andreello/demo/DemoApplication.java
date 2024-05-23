@@ -5,7 +5,10 @@ import br.dev.andreello.demo.modules.Test;
 import br.dev.andreello.demo.skeletons.Module;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -25,7 +28,7 @@ public class DemoApplication {
 	}
 
 	@RequestMapping("/api/v1/{module}")
-	public @ResponseBody String api(@PathVariable String module) throws InstantiationException, IllegalAccessException {
+	public @ResponseBody String api(@PathVariable String module) {
 		if (!map.containsKey(module)) {
 			return "This reference doesn't exist";
 		}
@@ -45,9 +48,4 @@ public class DemoApplication {
 
 		return Reference.execute();
 	}
-
-//	@PostMapping(path = "/v1/api/")
-//	public HashMap<String, Object> api(@RequestParam(value = "id", required = false) String id) {
-//
-//	}
 }
