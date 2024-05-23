@@ -3,7 +3,6 @@ package br.dev.andreello.demo;
 import br.dev.andreello.demo.modules.Login;
 import br.dev.andreello.demo.modules.Test;
 import br.dev.andreello.demo.skeletons.Module;
-import com.fasterxml.jackson.databind.node.TextNode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
